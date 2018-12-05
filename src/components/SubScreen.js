@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { connect } from 'react-redux';
-import { Actions } from 'react-native-router-flux';
 import { request } from './../store/action';
 
-class MainPage extends Component {
+class SubScreen extends Component {
     constructor(props) {
         super(props);
     }
@@ -21,6 +20,7 @@ class MainPage extends Component {
     render() {
         return(
           <View>
+            <Text>Dub-Smez</Text>
             <Text>id: {this.props.idDrink}</Text>
             <Text>name: {this.props.strDrink}</Text>
             <Text>error: {this.props.error}</Text>
@@ -29,8 +29,7 @@ class MainPage extends Component {
             <TouchableOpacity
               style={{ padding: 10, backgroundColor: 'gold', margin: 18 }}
               onPress={() => {
-                // this.props.reload();
-                Actions.subscreen();
+                this.props.reload();
               }}
             >
                 <Text>
@@ -44,18 +43,18 @@ class MainPage extends Component {
 
 const mapStateToProps = state => (
     {
-        idDrink: state.user.idDrink,
-        strDrink: state.user.strDrink,
-        error: state.user.error,
-        loading: state.user.loading,
-        success: state.user.success
+        // idDrink: state.user.idDrink,
+        // strDrink: state.user.strDrink,
+        // error: state.user.error,
+        // loading: state.user.loading,
+        // success: state.user.success
     }
 );
 
 const mapDispatchToProps = dispatch => (
     {
-        reload: () => dispatch(request()),
+        // reload: () => dispatch(request()),
     }
 );
 
-export default connect(mapStateToProps, mapDispatchToProps)(MainPage);
+export default connect(mapStateToProps, mapDispatchToProps)(SubScreen);
