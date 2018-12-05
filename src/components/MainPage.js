@@ -5,7 +5,7 @@ import { request } from './../store/action';
 
 class MainPage extends Component {
     constructor(props) {
-        super();
+        super(props);
     }
 
     componentDidMount() {
@@ -26,7 +26,7 @@ class MainPage extends Component {
             <Text>loading: {this.props.loading}</Text>
             <Text>success: {this.props.success}</Text>
             <TouchableOpacity
-              style={{ padding: 10, backgroundColor: 'gold' }}
+              style={{ padding: 10, backgroundColor: 'gold', margin: 18 }}
               onPress={() => {
                 this.props.reload();
               }}
